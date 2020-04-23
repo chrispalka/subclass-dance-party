@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  //$('body').css('forest-background', 'url');
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -27,8 +28,9 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    // window.dancers.push(dancer);
   });
 });
 
