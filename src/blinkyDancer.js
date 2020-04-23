@@ -1,14 +1,14 @@
 var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
-  //this.callCount = 0;
-  //this.$node.append(); //add img tag w/src, alt, and class in string
+  this.callCount = 0;
+  //this.$node.append(); //add img tag w/src, alt, and class
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 
 MakeBlinkyDancer.prototype.step = function() {
-  //this.callCount++;
+  this.callCount++;
   var oldStep = MakeDancer.prototype.step.bind(this);
   oldStep();
   this.$node.toggle();
