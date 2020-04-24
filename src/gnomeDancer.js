@@ -1,7 +1,7 @@
 var MakeGnomeDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.callCount = 0;
-  this.$node = $('<span class="gnomeDancer"><img class="gnomeDancerImg" src="assets/mushroom-gnome.png"></img></span>');
+  this.$node = $('<span class="gnomeDancer"><img class="gnomeDancerImg animated" src="assets/mushroom-gnome.png"></img></span>');
   this.setPosition(top, left);
 };
 
@@ -12,6 +12,8 @@ MakeGnomeDancer.prototype.constructor = MakeGnomeDancer;
 MakeGnomeDancer.prototype.swing = function() {
 
 };
+
+
 
 
 

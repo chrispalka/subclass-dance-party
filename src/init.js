@@ -29,30 +29,56 @@ $(document).ready(function() {
     case 'MakeDancer':
     case 'MakeBlinkyDancer':
       var dancer = new dancerMakerFunction(
-        $('body').height() * Math.random(),
-        $('body').width() * Math.random(),
+        randomNum(50, 70),
+        randomNum(30, 50),
         Math.random() * 1000
       );
+      window.dancers.push(dancer);
       $('body').append(dancer.$node);
       break;
     case 'MakeGnomeDancer':
       var dancer = new dancerMakerFunction(
-        // 1040,
-        // 1100,
-        $('body').height() * Math.random(),
-        $('body').width() * Math.random(),
+        randomNum(50, 70),
+        randomNum(30, 50),
         Math.random() * 1000
       );
+      window.dancers.push(dancer);
       $('body').append(dancer.$node);
       $('.gnomeDancerImg').animate({
         height: '200px',
         width: '100px',
       });
-
+      break;
+    case 'MakeFairyDancer':
+      var dancer = new dancerMakerFunction(
+        randomNum(30, 50),
+        randomNum(30, 50),
+        Math.random() * 1000
+      );
+      window.dancers.push(dancer);
+      $('body').append(dancer.$node);
+      break;
+    case 'MakeButterflyDancer':
+      var dancer = new dancerMakerFunction(
+        randomNum(30, 50),
+        randomNum(30, 50),
+        Math.random() * 1000
+      );
+      window.dancers.push(dancer);
+      $('body').append(dancer.$node);
       break;
     }
     console.log(dancer);
+  });
 
+  $('.lineUpButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
   });
 });
+
+var randomNum = function (min, max) {
+  return Math.random() * (max - min) + min;
+};
 

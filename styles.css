@@ -1,5 +1,6 @@
 body, html{
   height:100%;
+  font-family: 'Dancing Script', cursive;
 }
 
 html {
@@ -12,30 +13,100 @@ body {
   /* position: relative; */
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .clear{
   padding:5px 12px;
-  float:right;
 }
 .topbar{
-  height:32px;
-  background-color: #555;
+  height:50px;
+  background-color: rgb(40, 134, 52);
+  text-align: center;
 }
-.title{
-  background-color: #777;
-}
+/* .title {
+
+} */
 .dancer{
+  border:10px solid red;
   border-radius:10px;
   position: absolute;
+  top: 5;
+  left: 20;
 }
 
 .gnomeDancer {
-  position: fixed;
+  position: absolute;
 }
 
 .gnomeDancerImg {
   height: 20px;
   width: 10px;
-  position: fixed;
+  position: absolute;
+}
+
+.fairyDancer {
+  position: absolute;
+}
+
+.fairyDancerImg {
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  height: 200px;
+  width: 150px;
+  transition-duration: 2s;
+}
+.fairyDancerImg:hover {
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  height: 500px;
+  width: 400px;
+  /* animation-duration: 4s; */
+}
+
+.butterflyDancer {
+  position: absolute;
+}
+
+.butterflyDancerImg {
+  height: 200px;
+  width: 150px;
+}
+
+
+.animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.gnomeDancerImg {
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  transform-origin: center bottom;
 }

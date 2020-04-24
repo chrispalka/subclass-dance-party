@@ -1,15 +1,16 @@
-var FairyDancer = function(top, left, timeBetweenSteps) {
-  MakeBlinkyDancer.call(this, top, left, timeBetweenSteps);
-  this.callCount = 0;
-  this.$node.append('<img src="assets/iridessa fairy.png" alt="iridessa fairy"/>'); //add img tag w/src, alt, and class
+var MakeFairyDancer = function(top, left, timeBetweenSteps) {
+  MakeDancer.call(this, top, left, timeBetweenSteps);
+  //this.callCount = 0;
+  this.$node = $('<span class="fairyDancer"><img class="fairyDancerImg" src="assets/iridessa-fairy.png" alt="iridessa-fairy"/></span>');
+  this.setPosition(top, left);
 };
 
-FairyDancer.prototype = Object.create(MakeBlinkyDancer.prototype);
-FairyDancer.prototype.constructor = FairyDancer;
+MakeFairyDancer.prototype = Object.create(MakeDancer.prototype);
+MakeFairyDancer.prototype.constructor = MakeFairyDancer;
 
-FairyDancer.prototype.step = function() {
-  this.callCount++;
-  var oldStep = MakeDancer.prototype.step.bind(this);
-  oldStep();
-  this.$node.toggle();
-};
+// FairyDancer.prototype.step = function() {
+//   this.callCount++;
+//   var oldStep = MakeDancer.prototype.step.bind(this);
+//   oldStep();
+//   this.$node.toggle();
+// };
