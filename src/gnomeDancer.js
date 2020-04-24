@@ -1,13 +1,21 @@
-var GnomeDancer = function(top, left, timeBetweenSteps) {
-  MakeBlinkyDancer.call(this, top, left, timeBetweenSteps);
+var MakeGnomeDancer = function(top, left, timeBetweenSteps) {
+  MakeDancer.call(this, top, left, timeBetweenSteps);
   this.callCount = 0;
+  this.$node = $('<span class="gnomeDancer"><img class="gnomeDancerImg" src="assets/mushroom-gnome.png"></img></span>');
+  this.setPosition(top, left);
 };
 
-GnomeDancer.prototype = Object.create(MakeBlinkyDancer.prototype);
-GnomeDancer.prototype.constructor = GnomeDancer;
+MakeGnomeDancer.prototype = Object.create(MakeDancer.prototype);
+MakeGnomeDancer.prototype.constructor = MakeGnomeDancer;
 
-GnomeDancer.prototype.step = function() {
-  this.callCount++;
-  MakeBlinkyDancer.prototype.step.call(this);
-  this.$node.toggle();
+
+MakeGnomeDancer.prototype.swing = function() {
+
 };
+
+
+
+// MakeGnomeDancer.prototype.step = function() {
+//   this.callCount++;
+//   this.$node.slideDown();
+// };
