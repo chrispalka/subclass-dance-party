@@ -1,7 +1,8 @@
 $(document).ready(function() {
   window.dancers = [];
-  //$('body').css('forest-background', 'url');
-
+  $('.clear').on('click', function(event) {
+    $('body').find('span').remove();
+  });
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -22,15 +23,36 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    // console.log(dancerMakerFunctionName);
 
-    var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 1000
-    );
+    switch (dancerMakerFunctionName) {
+    case 'MakeDancer':
+    case 'MakeBlinkyDancer':
+      var dancer = new dancerMakerFunction(
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random(),
+        Math.random() * 1000
+      );
+      $('body').append(dancer.$node);
+      break;
+    case 'MakeGnomeDancer':
+      var dancer = new dancerMakerFunction(
+        // 1040,
+        // 1100,
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random(),
+        Math.random() * 1000
+      );
+      $('body').append(dancer.$node);
+      $('.gnomeDancerImg').animate({
+        height: '200px',
+        width: '100px',
+      });
 
-    window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+      break;
+    }
+    console.log(dancer);
+
   });
 });
 

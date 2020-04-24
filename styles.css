@@ -2,16 +2,14 @@ body, html{
   height:100%;
 }
 
-/* html {
-  background: url(assets/forest-background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
-body{
+html {
+  background-color: #304035;
+}
+body {
+  background: url(assets/forest-background.jpg) no-repeat center/contain;
   margin: 0px;
   font-size: 18px;
+  /* position: relative; */
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -29,5 +27,15 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   border-radius:10px;
-  position:absolute;
+  position: absolute;
+}
+
+.gnomeDancer {
+  position: fixed;
+}
+
+.gnomeDancerImg {
+  height: 20px;
+  width: 10px;
+  position: fixed;
 }
