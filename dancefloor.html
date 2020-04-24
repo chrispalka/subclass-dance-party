@@ -10,18 +10,28 @@
     <script src="src/gnomeDancer.js"></script>
     <script src="src/fairyDancer.js"></script>
     <script src="src/butterflyDancer.js"></script>
+
   </head>
   <body>
+    <audio src="assets/forest-soundtrack.mp3" id="forest-soundtrack" loop="loop"></audio>
+    <audio src="assets/gnome-sound.mp3" id="gnome-sound"></audio>
+    <audio src="assets/fairy-sound.mp3" id="fairy-sound"></audio>
+  <div class="container">
+    <h2 class="mute"><a href="#" class="muteButton">Mute</a></h2>
+    <h1 class="title">Forest Dance Party</h1>
     <div class="topbar">
-      <h1 class="title">Forest Dance Party</h1>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">Blinky Dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGnomeDancer">Gnome Dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeFairyDancer">Fairy Dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeButterflyDancer">Butterfly</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeDancer">Dancer</a>
-      <a href="#" class="lineUpButton">Line Up</a>
+      <a href="#" class="addDancerButton links" data-dancer-maker-function-name="MakeBlinkyDancer">Blinky Dancer</a>
+      <a href="#" class="addDancerButton links" data-dancer-maker-function-name="MakeGnomeDancer">Gnome Dancer</a>
+      <a href="#" class="addDancerButton links" data-dancer-maker-function-name="MakeFairyDancer">Fairy Dancer</a>
+      <a href="#" class="addDancerButton links" data-dancer-maker-function-name="MakeButterflyDancer">Butterfly</a>
+      <a href="#" class="addDancerButton links" data-dancer-maker-function-name="MakeDancer">Dancer</a>
+      <a href="#" class="lineUpButton links">Line Up</a>
       <!-- <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeDancer">add a dancer</a> -->
-      <a href="#" class="clear">Clear</a>
+      <a href="#" class="clear links">Clear</a>
+    </div>
+      <div class="intro">
+        <h1 class="party"><a href="#" class="partyButton">PARTY</a></h1>
+      </div>
     </div>
     <script src="src/init.js"></script>
   </body>

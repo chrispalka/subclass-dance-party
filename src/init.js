@@ -3,6 +3,21 @@ $(document).ready(function() {
   $('.clear').on('click', function(event) {
     $('body').find('span').remove();
   });
+  $('.partyButton').on('click', function() {
+    $('.title').show(1200);
+    $('.links').show(1400);
+    $('.intro').hide(1200);
+    $('#forest-soundtrack')[0].play();
+  });
+  $('.muteButton').on('click', function() {
+    var mute = $('#forest-soundtrack').prop('muted');
+    $('#forest-soundtrack').prop('muted', !mute);
+    if (!mute) {
+      $('.muteButton').text('Unmute');
+    } else {
+      $('.muteButton').text('Mute');
+    }
+  });
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -44,6 +59,7 @@ $(document).ready(function() {
       );
       window.dancers.push(dancer);
       $('body').append(dancer.$node);
+      $('#gnome-sound')[0].play();
       $('.gnomeDancerImg').animate({
         height: '200px',
         width: '100px',
@@ -57,6 +73,7 @@ $(document).ready(function() {
       );
       window.dancers.push(dancer);
       $('body').append(dancer.$node);
+      $('#fairy-sound')[0].play();
       break;
     case 'MakeButterflyDancer':
       var dancer = new dancerMakerFunction(

@@ -1,6 +1,7 @@
 body, html{
   height:100%;
   font-family: 'Dancing Script', cursive;
+  overflow: hidden;
 }
 
 html {
@@ -16,17 +17,19 @@ body, a:link, a:visited, a:active{
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-.title, .addDancerButton, .clear{
+.title, .addDancerButton, .clear, .lineUpButton {
+  display: none;
   padding:5px 12px;
+  font-size: 30px;
+}
+.title {
+  margin-top: 0px;
 }
 .topbar{
   height:50px;
-  background-color: rgb(40, 134, 52);
   text-align: center;
 }
-/* .title {
 
-} */
 .dancer{
   border:10px solid red;
   border-radius:10px;
@@ -63,6 +66,10 @@ body, a:link, a:visited, a:active{
   width: 400px;
   /* animation-duration: 4s; */
 }
+.mute {
+  float: right;
+  position: fixed;
+}
 
 .butterflyDancer {
   position: absolute;
@@ -73,6 +80,31 @@ body, a:link, a:visited, a:active{
   width: 150px;
 }
 
+#forest-soundtrack, #gnome-sound, #fairy-sound {
+  display: none;
+}
+
+.container {
+  text-align: center;
+}
+
+.intro {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15%;
+  font-size: 50px;
+
+}
+
+.partyButton {
+  width: 100%;
+  font-size: 50px;
+  transition-duration: 500ms;
+}
+
+.partyButton:hover {
+  font-size: 65px;
+}
 
 .animated {
   animation-duration: 2s;
