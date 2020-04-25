@@ -1,7 +1,7 @@
 var MakeFairyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   //this.callCount = 0;
-  this.$node = $('<span class="fairyDancer"><img class="fairyDancerImg animated" src="assets/iridessa-fairy.png" alt="iridessa-fairy"/></span>');
+  this.$node = $('<span class="fairyDancer"><a href="#" class="fairyClick"><img class="fairyDancerImg animated" src="assets/iridessa-fairy.png" alt="iridessa-fairy"/></a></span>');
   this.setPosition(top, left);
 };
 

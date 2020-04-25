@@ -64,6 +64,9 @@ $(document).ready(function() {
         height: '200px',
         width: '100px',
       });
+      $('.gnomeClick').on('click', function() {
+        $('#gnome-sound')[0].play();
+      });
       break;
     case 'MakeFairyDancer':
       var dancer = new dancerMakerFunction(
@@ -74,6 +77,9 @@ $(document).ready(function() {
       window.dancers.push(dancer);
       $('body').append(dancer.$node);
       $('#fairy-sound')[0].play();
+      $('.fairyClick').on('click', function() {
+        $('#fairy-sound')[0].play();
+      });
       break;
     case 'MakeButterflyDancer':
       var dancer = new dancerMakerFunction(
@@ -85,7 +91,7 @@ $(document).ready(function() {
       $('body').append(dancer.$node);
       break;
     }
-    console.log(dancer);
+    // console.log(dancer);
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -95,26 +101,69 @@ $(document).ready(function() {
   });
 
   //interaction flip
+  // $('.flipButton').on('click', function(event) {
+  //   var together = [];
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     var dancerClass = $(window.dancers[i].$node).attr('class');
+  //     if (dancerClass === 'fairyDancer') {
+  //       together.push(window.dancers[i]);
+  //     }
+  //     if (dancerClass === 'butterflyDancer') {
+  //       together.push(window.dancers[i]);
+  //     }
+  //     if (together.length === 2) {
+  //       break;
+  //     }
+  //   }
+  //   var top = $('body').height() - 300;
+  //   var left = $('body').width() - 250;
+  //   for (var j = 0; j < together.length; j++) {
+  //     together[i].flip(top, left);
+  //   }
+  //   console.log(together);
+  // });
+
+  // $('.butterflyDancerImg').on('click', function(event){
+  //   var min = Math.pow(5000, 2);
+  //   var target, index;
+  //   $this = $(this);
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     if(window.dancers[i] !== $(this)) {
+  //       var dist = Math.pow(($(this).top - window.dancers[i].top),2) + Math.pow(($(this).left - window.dancers[i].left), 2);
+  //       if(dist < min && dist !== 0) {
+  //         min = dist;
+  //         index = i;
+  //         target = window.dancers[i];
+  //       }
+  //     }
+  //   }
+  //   target.animate({'top':$(this).css('top'), 'left':$(this).css('left')});
+  // });
+
+  console.log(window.dancers);
   $('.flipButton').on('click', function(event) {
     var together = [];
     for (var i = 0; i < window.dancers.length; i++) {
-      var dancerClass = $(window.dancers[i].$node).attr('class');
-      if (dancerClass === 'MakeFairyDancer') {
-        together.push(window.dancers[i]);
-      }
-      if (dancerClass === 'MakeButterflyDancer') {
-        together.push(window.dancers[i]);
-      }
-      if (together.length === 2) {
-        break;
-      }
+      together.push(window.dancers[i]);
     }
-    var top = $('body').height() - 300;
-    var left = $('body').width() - 250;
-    for (var j = 0; j < together.length; j++) {
-      together[i].flip(top, left);
-    }
+    // var dancerOne = together[0];
+    // var dancerTwo = together[1];
+    // var dancerOneDistance = $('')
+    console.log(together);
+
+    var dancerOne = together[0].$node;
+    console.log(dancerOne);
+    var dancer2 = together[1];
+    var distanceLeft = Math.abs(dancer1.left - dancer2.left);
+    var distanceTop = Math.abs(dancer1.top - dancer2.top);
+    var bringTogether = function(dancer1, dancer2) {
+      dancer1.left = distanceLeft + '%';
+      dancer2.left = distanceLeft + '%';
+      dancer1.top = distanceTop + '%';
+      dancer2.top = distanceTop + '%';
+    };
   });
+
 });
 
 var randomNum = function (min, max) {

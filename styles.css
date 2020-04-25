@@ -17,7 +17,7 @@ body, a:link, a:visited, a:active{
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-.title, .addDancerButton, .clear, .lineUpButton {
+.title, .addDancerButton, .clear, .lineUpButton, .flipButton {
   display: none;
   padding:5px 12px;
   font-size: 30px;
@@ -53,19 +53,15 @@ body, a:link, a:visited, a:active{
 }
 
 .fairyDancerImg {
-  /* -webkit-transform: scaleX(-1);
-  transform: scaleX(-1); */
   height: 200px;
   width: 150px;
-  transition-duration: 2s;
+  transition-duration: 1.5s;
 }
 .fairyDancerImg:hover {
-  /* -webkit-transform: scaleX(-1);
-  transform: scaleX(-1); */
   height: 500px;
   width: 400px;
-  /* animation-duration: 4s; */
 }
+
 .mute {
   float: right;
   position: fixed;
@@ -109,14 +105,15 @@ body, a:link, a:visited, a:active{
 .animated {
   animation-duration: 2s;
   animation-fill-mode: both;
+
 }
 
-.animated.flip {
+/* .animated.flip {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
   -webkit-animation-name: flip;
   animation-name: flip;
-}
+} */
 
 @keyframes bounce {
   from,
@@ -145,26 +142,43 @@ body, a:link, a:visited, a:active{
 }
 
 @keyframes flip {
-  from,
-  20%,
-  53%,
-  80%,
-  to {
-    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0)
+  from {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
       rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: ease-in;
+  }
+
+  to {
     transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
 }
 
+
 .fairyDancerImg {
-  animation-iteration-count: 1;
+  backface-visibility: visible;
   animation-name: flip;
 }
 
 .butterflyDancerImg {
-  animation-iteration-count: 1;
+  backface-visibility: visible;
   animation-name: flip;
 }
 
@@ -172,4 +186,8 @@ body, a:link, a:visited, a:active{
   animation-iteration-count: infinite;
   animation-name: bounce;
   transform-origin: center bottom;
+}
+
+.hue > img {
+  filter: hue-rotate(90deg);
 }
