@@ -158,6 +158,16 @@ body, a:link, a:visited, a:active{
   }
 }
 
+.fairyDancerImg {
+  animation-iteration-count: 1;
+  animation-name: flip;
+}
+
+.butterflyDancerImg {
+  animation-iteration-count: 1;
+  animation-name: flip;
+}
+
 .gnomeDancerImg {
   animation-iteration-count: infinite;
   animation-name: bounce;
