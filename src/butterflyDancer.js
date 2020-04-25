@@ -1,7 +1,7 @@
 var MakeButterflyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.callCount = 0;
-  this.$node = $('<span class="butterflyDancer"><img class="butterflyDancerImg" src="assets/butterfly-yellow.gif"></img></span>');
+  this.$node = $('<span class="butterflyDancer"><img class="butterflyDancerImg animated" src="assets/butterfly-yellow.gif"></img></span>');
   this.setPosition(top, left);
 };
 
