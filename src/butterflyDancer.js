@@ -9,6 +9,10 @@ MakeButterflyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeButterflyDancer.prototype.constructor = MakeButterflyDancer;
 
 
-MakeButterflyDancer.prototype.swing = function() {
-
+MakeButterflyDancer.prototype.flip = function(top, left) {
+  var flipSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(flipSettings);
 };

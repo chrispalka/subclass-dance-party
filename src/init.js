@@ -93,6 +93,28 @@ $(document).ready(function() {
       window.dancers[i].lineUp();
     }
   });
+
+  //interaction flip
+  $('.flipButton').on('click', function(event) {
+    var together = [];
+    for (var i = 0; i < window.dancers.length; i++) {
+      var dancerClass = $(window.dancers[i].$node).attr('class');
+      if (dancerClass === 'MakeFairyDancer') {
+        together.push(window.dancers[i]);
+      }
+      if (dancerClass === 'MakeButterflyDancer') {
+        together.push(window.dancers[i]);
+      }
+      if (together.length === 2) {
+        break;
+      }
+    }
+    var top = $('body').height() - 300;
+    var left = $('body').width() - 250;
+    for (var j = 0; j < together.length; j++) {
+      together[i].flip(top, left);
+    }
+  });
 });
 
 var randomNum = function (min, max) {

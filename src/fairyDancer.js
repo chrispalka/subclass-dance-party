@@ -8,9 +8,10 @@ var MakeFairyDancer = function(top, left, timeBetweenSteps) {
 MakeFairyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeFairyDancer.prototype.constructor = MakeFairyDancer;
 
-// FairyDancer.prototype.step = function() {
-//   this.callCount++;
-//   var oldStep = MakeDancer.prototype.step.bind(this);
-//   oldStep();
-//   this.$node.toggle();
-// };
+MakeFairyDancer.prototype.flip = function(top, left) {
+  var flipSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(flipSettings);
+};

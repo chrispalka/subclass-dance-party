@@ -31,7 +31,7 @@ MakeDancer.prototype.setPosition = function(top, left) {
 //lineUp function
 MakeDancer.prototype.lineUp = function() {
   this.$node.animate({
-    'top': '445'
+    'top': '420'
   });
 };
 
