@@ -91,7 +91,6 @@ $(document).ready(function() {
       $('body').append(dancer.$node);
       break;
     }
-    // console.log(dancer);
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -140,30 +139,57 @@ $(document).ready(function() {
   //   target.animate({'top':$(this).css('top'), 'left':$(this).css('left')});
   // });
 
-  console.log(window.dancers);
-  $('.flipButton').on('click', function(event) {
-    var together = [];
+  // console.log(window.dancers);
+  // $('.flipButton').on('click', function(event) {
+  //   var together = [];
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     together.push(window.dancers[i]);
+  //   }
+  //   // var dancerOne = together[0];
+  //   // var dancerTwo = together[1];
+  //   // var dancerOneDistance = $('')
+  //   console.log(together);
+
+  //   var dancer1 = together[0].$node;
+  //   console.log(dancer1);
+  //   var dancer2 = together[1].$node;
+  //   var distanceLeft = Math.abs(dancer1.left - dancer2.left);
+  //   console.log(distanceLeft);
+  //   var distanceTop = Math.abs(dancer1.top - dancer2.top);
+  //   var bringTogether = function(dancer1, dancer2) {
+  //     dancer1.left = distanceLeft + '%';
+  //     dancer2.left = distanceLeft + '%';
+  //     dancer1.top = distanceTop + '%';
+  //     dancer2.top = distanceTop + '%';
+  //     return dancer1.left, dancer1.top
+  //   };
+  // });
+
+  setInterval(function () {
+    var positions = [];
+    var distances = [];
     for (var i = 0; i < window.dancers.length; i++) {
-      together.push(window.dancers[i]);
+      var top = window.dancers[i].$node.position().top;
+      var left = window.dancers[i].$node.position().left;
+      positions.push({top:top, left:left});
     }
-    // var dancerOne = together[0];
-    // var dancerTwo = together[1];
-    // var dancerOneDistance = $('')
-    console.log(together);
+    for (var j = 0; j < positions.length; j++) {
+      for (var k = 0; k < positions.length - 1; k++) {
+        if (j !== k) {
+          var topDifference = Math.pow((positions[j].top - positions[k].top), 2);
+          var leftDifference = Math.pow((positions[j].left - positions[k].left), 2);
+          distances.push({index1: j, index2: k, distance: Math.pow(topDifference + leftDifference, 0.5)});
+        }
+      }
+    }
+    // console.log(positions);
+    // console.log(distances);
+    for (var m = 0; m < distances.length; m++) {
+      if (distances[m].distance > 50) {
 
-    var dancerOne = together[0].$node;
-    console.log(dancerOne);
-    var dancer2 = together[1];
-    var distanceLeft = Math.abs(dancer1.left - dancer2.left);
-    var distanceTop = Math.abs(dancer1.top - dancer2.top);
-    var bringTogether = function(dancer1, dancer2) {
-      dancer1.left = distanceLeft + '%';
-      dancer2.left = distanceLeft + '%';
-      dancer1.top = distanceTop + '%';
-      dancer2.top = distanceTop + '%';
-    };
-  });
-
+      }
+    }
+  }, 3000);
 });
 
 var randomNum = function (min, max) {

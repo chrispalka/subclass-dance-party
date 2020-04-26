@@ -6,7 +6,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
-  //this.lineUp();
+  this.pair = false;
 };
 
 
