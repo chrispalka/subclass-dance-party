@@ -7,6 +7,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.step();
   this.setPosition(top, left);
   this.pair = false;
+  this.lineUp();
 };
 
 
@@ -19,7 +20,6 @@ MakeDancer.prototype.step = function() {
 };
 
 MakeDancer.prototype.flip = function() {
-  // $(this.$node).toggleClass('flip');
   setTimeout(this.flip.bind(this), 1000);
 };
 

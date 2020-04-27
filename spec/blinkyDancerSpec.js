@@ -32,16 +32,11 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
-
-  it('should have a lineUp function that makes dancers line up', function() {
-    sinon.spy(dancer.$node, 'lineUp');
-    dancer.lineUp();
-    expect(dancer.$node.lineUp.called).to.be.true;
-  });
-
-  it('should have a flip function that makes dancers interact', function() {
-    sinon.spy(dancer.$node, 'flip');
-    dancer.flip();
-    expect(dancer.$node.flip.called).to.be.true;
+  describe('dancer', function() {
+    it('should have a line up function that sets position of dancers', function() {
+      sinon.spy(dancer.$node, 'animate');
+      dancer.lineUp();
+      expect(dancer.$node.animate.called).to.be.true;
+    });
   });
 });

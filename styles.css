@@ -105,7 +105,6 @@ body, a:link, a:visited, a:active{
 .animated {
   animation-duration: 2s;
   animation-fill-mode: both;
-
 }
 
 /* .animated.flip {
@@ -172,23 +171,15 @@ body, a:link, a:visited, a:active{
 }
 
 
-.fairyDancerImg {
-  backface-visibility: visible;
-  animation-name: flip;
-}
 
-.butterflyDancerImg {
-  backface-visibility: visible;
-  animation-name: flip;
-}
-
-.gnomeDancerImg {
+.gnomeDancer {
   animation-iteration-count: infinite;
   animation-name: bounce;
   transform-origin: center bottom;
 }
 
 .flip {
+  animation-iteration-count: infinite;
   backface-visibility: visible;
   animation-name: flip;
 }

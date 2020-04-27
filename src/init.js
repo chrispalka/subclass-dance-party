@@ -108,7 +108,6 @@ $(document).ready(function() {
     for (var j = 0; j < spans.length; j++) {
       leftPositions.push(Math.round($(spans[j]).offset().left));
     }
-    console.log(leftPositions.sort(arrSort));
     // console.log(leftPositions.sort(arrSort));
     // for (var q = 0; q < distances.length; q++) {
 
@@ -196,7 +195,7 @@ $(document).ready(function() {
     var positions = [];
     var distances = [];
     var spans = document.getElementsByTagName('span');
-    console.log(spans);
+    // console.log(spans);
     for (var i = 0; i < window.dancers.length; i++) {
       var top = window.dancers[i].$node.position().top;
       var left = window.dancers[i].$node.position().left;
