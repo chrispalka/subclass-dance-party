@@ -1,16 +1,11 @@
-var MakeButterflyDancer = function(top, left, timeBetweenSteps) {
-  MakeDancer.call(this, top, left, timeBetweenSteps);
-  this.callCount = 0;
-  this.$node = $('<span class="butterflyDancer animated"><img class="butterflyDancerImg" src="assets/butterfly-yellow.gif"></img></span>');
-  this.setPosition(top, left);
-  this.hue();
-};
+var MakeButterflyDancer = class MakeButterflyDancer extends MakeDancer {
+  constructor(top, left, timeBetweenSteps) {
+    super(top, left, timeBetweenSteps);
+    this.$node = $('<span class="butterflyDancer"><img class="butterflyDancerImg" src="assets/butterfly-yellow.gif"></img></span>');
+    this.setPosition(top, left);
+  }
 
-MakeButterflyDancer.prototype = Object.create(MakeDancer.prototype);
-MakeButterflyDancer.prototype.constructor = MakeButterflyDancer;
-
-
-MakeButterflyDancer.prototype.hue = function() {
-  this.$node.toggleClass('hue');
-  setTimeout(this.hue.bind(this), 1000);
+  step() {
+    MakeDancer.prototype.step.call(this);
+  }
 };
