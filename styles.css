@@ -188,6 +188,11 @@ body, a:link, a:visited, a:active{
   transform-origin: center bottom;
 }
 
+.flip {
+  backface-visibility: visible;
+  animation-name: flip;
+}
+
 .hue > img {
   filter: hue-rotate(90deg);
 }

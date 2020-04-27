@@ -10,14 +10,6 @@ MakeButterflyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeButterflyDancer.prototype.constructor = MakeButterflyDancer;
 
 
-MakeButterflyDancer.prototype.flip = function(top, left) {
-  var flipSettings = {
-    top: top,
-    left: left
-  };
-  this.$node.css(flipSettings);
-};
-
 MakeButterflyDancer.prototype.hue = function() {
   $(this.$node).toggleClass('hue');
   setTimeout(this.hue.bind(this), 1000);
